@@ -1,0 +1,31 @@
+
+import java.util.*;
+import java.io.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		int n= scn.nextInt();
+		int arr[] = new int[n];
+		for(int i=0 ; i< n ; i++){
+		    arr[i] = scn.nextInt();
+		}
+		int ans = GCD(arr, n);
+		System.out.println(ans);
+	}
+	public static int GCD(int arr[] , int n){
+	    int max = Integer.MIN_VALUE;
+	    int min = Integer.MAX_VALUE;
+	    for(int i=0 ; i< n ; i++){
+	        max = Math.max(arr[i] , max);
+	        min = Math.min(arr[i] , min);
+	    }
+	    int num = -1;
+	    for(int j=1 ; j <= min/2 ; j++){
+	        if(max % j == 0 && min % j==0){
+	            num = j;
+	        }
+	    }
+	    return num;
+	}
+}
