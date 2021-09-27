@@ -1,0 +1,61 @@
+/* The input consist of a reg no
+if both digit in the pair are the same then any digit you can use in the roll no
+if digit 1 > digit 2 --> use digit 1 else digit 2 */
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scn = new Scanner(System.in);
+		String regno = scn.next();
+		int n= regno.length();
+		
+	
+		
+		
+		if(regno.length() % 2 ==0){
+		    	String ans =  "";
+    		for(int i=0  ; i < n-1 ; i+=2){
+    		    int j=i+1;
+    		    char ch1 = regno.charAt(i);
+    		    int val1 = ch1-'0';
+    		    char ch2 = regno.charAt(j);
+    		    int val2 = ch2-'0';
+    		    
+    		    int max = Math.max(val1 , val2);
+    		    ans+=("" + max);    
+    		}
+    		System.out.println(ans);
+	  }
+	  else if(regno.length() % 2 !=0){
+	      	String ans =  "";
+    		for(int i=0  ; i <= n-2 ; i+=2){
+    		    int j=i+1;
+    		    char ch1 = regno.charAt(i);
+    		    int val1 = ch1-'0';
+    		    char ch2 = regno.charAt(j);
+    		    int val2 = ch2-'0';
+    		    
+    		    if(val1 > val2){
+    		    ans+=("" + val1);
+    		    }
+    		    else if(val1 < val2){
+    		        ans+=("" + val2);
+    		    }
+    		    else{
+    		        ans+= ("" + val1);
+    		    }
+    		    
+    		}
+    		
+		    char last_ch = regno.charAt(n-1);
+		    int last_val = last_ch-'0';
+		    ans+=(""+last_val);
+		    
+		    System.out.println(ans);
+		
+	  }
+	  	
+	}
+}
