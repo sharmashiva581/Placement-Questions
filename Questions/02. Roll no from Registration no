@@ -10,10 +10,7 @@ public class Main
 	    Scanner scn = new Scanner(System.in);
 		String regno = scn.next();
 		int n= regno.length();
-		
-	
-		
-		
+
 		if(regno.length() % 2 ==0){
 		    	String ans =  "";
     		for(int i=0  ; i < n-1 ; i+=2){
@@ -38,20 +35,20 @@ public class Main
     		    int val2 = ch2-'0';
     		    
     		    if(val1 > val2){
-    		    ans+=("" + val1);
+    		    ans+= val1;
     		    }
     		    else if(val1 < val2){
-    		        ans+=("" + val2);
+    		        ans+=  val2;
     		    }
     		    else{
-    		        ans+= ("" + val1);
+    		        ans+= val1;
     		    }
     		    
     		}
     		
 		    char last_ch = regno.charAt(n-1);
 		    int last_val = last_ch-'0';
-		    ans+=(""+last_val);
+		    ans+= last_val;
 		    
 		    System.out.println(ans);
 		
