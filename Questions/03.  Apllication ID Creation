@@ -1,0 +1,64 @@
+/* Application ID
+In an online exam the test paper set is categorized by the letters A-Z. The students enrolled in the exam have been assigned a numeric value called application ID.
+To assign the test set to the student, firstly the sum of all the digits in the application ID is calculated.
+If the sum is within the numeric range 1-26 the corresponding alphabetic set code is assigned to the student,
+else the sum of digits is calculated again and so on until the sum falls within the range of 1-26.
+
+Input 1: 6442
+Output 1: P
+ 
+Input 2: 558823
+Output 2: D */
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scn = new Scanner(System.in);
+		String regno = scn.next();
+		int n= regno.length();
+		
+		if(regno.length() % 2 ==0){
+		    	String ans =  "";
+    		for(int i=0  ; i < n-1 ; i+=2){
+    		    int j=i+1;
+    		    char ch1 = regno.charAt(i);
+    		    int val1 = ch1-'0';
+    		    char ch2 = regno.charAt(j);
+    		    int val2 = ch2-'0';
+    		    
+    		    int max = Math.max(val1 , val2);
+    		    ans+= max;
+    		    
+    		}
+    		System.out.println(ans);
+	  }
+	  else if(regno.length() % 2 !=0){
+	      	String ans =  "";
+    		for(int i=0  ; i <= n-2 ; i+=2){
+    		    int j=i+1;
+    		    char ch1 = regno.charAt(i);
+    		    int val1 = ch1-'0';
+    		    char ch2 = regno.charAt(j);
+    		    int val2 = ch2-'0';
+    		    
+    		    if(val1 > val2){
+    		    ans+= val1;
+    		    }
+    		    else if(val1 < val2){
+    		        ans+= val2;
+    		    }
+    		    else{
+    		        ans+=  val1;
+    		    }
+    		}
+    		
+		    char last_ch = regno.charAt(n-1);
+		    int last_val = last_ch-'0';
+		    ans+=last_val;
+		    
+		    System.out.println(ans);
+	  }
+	}
+}
