@@ -1,0 +1,36 @@
+//For example: if str is "abc1*kyoo" then your program should return the string akbycolo because a pairs with k, b pairs with y, etc. 
+And then add the token string in this string and replace every 3rd character of ur string with an X and return the final string.
+The string will always split evenly with the asterisk in the center.
+
+import java.util.*;
+import java.io.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner scn = new Scanner(System.in);
+	String input = scn.nextLine();
+	String ans = StringChallenge(input);
+	 for(int idx = 0; idx < ans.length(); idx++){
+	         System.out.print(ans.charAt(idx));
+	     }
+	}
+	public static String StringChallenge(String input){
+	    int mid = input.length()/2;
+	    int i = 0;
+	     int j = mid+1;
+	     String pre = "";
+	     
+	     while(i < mid && j < input.length()){
+	        pre = pre + input.charAt(i);
+	        pre = pre + input.charAt(j);
+	        i++;
+	        j++;
+	     }
+	     StringBuilder sb = new StringBuilder(pre);
+	     sb.append("2x6ik1mu4fd");
+	     for(int k =2; k < sb.length(); k+=3){
+	         sb.setCharAt(k ,'X');
+	     }
+	    return sb.toString();
+	}
+}
