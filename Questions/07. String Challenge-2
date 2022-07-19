@@ -18,11 +18,13 @@ public class Main
 	        int v1 = str.charAt(i)-'0';
 	        int v2 = str.charAt(i+1)-'0';
 	        
-	        if(v1 % 2==0 && v2 % 2==0){ // both num are even case
-	            res = res + v1 + '*';
-	           
-	        }
-	        else if(v1 % 2 !=0 && v2 % 2 !=0){ // odd numbers case
+	       
+    	        if( v1 !=0 && v2 !=0 && v1 % 2==0 && v2 % 2==0){ // both num are even case
+    	            res = res + v1 + '*';
+    	           
+    	        }
+	        
+	        else if( v1 !=0 && v2 !=0 && v1 % 2 !=0 && v2 % 2 !=0){ // odd numbers case
 	            res = res + v1 + '-' ;
 	           
 	        }
